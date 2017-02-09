@@ -16,7 +16,7 @@ def compress(string):
             current_char = char
             current_char_count = 1
 
-        if (i == len(string)-1):
+        if i == (len(string) - 1):
             letters_count.append(current_char + str(current_char_count))
 
     compressed_string = ''.join(letters_count)
