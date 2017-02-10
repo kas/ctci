@@ -2,15 +2,15 @@
 
 #include <iostream>
 
-void reverse(char* str) {
+std::string reverse(char* str) {
     std::string rev_str = "";
     for (int i = (strlen(str) - 1); i >= 0; i--) {
         rev_str += str[i];
     }
-    std::cout << rev_str << std::endl;
+    return rev_str;
 }
 
 int main(int argc, const char * argv[]) {
-    reverse("esrever");
+    std::cout << reverse("esrever") << std::endl;
     return 0;
 }
