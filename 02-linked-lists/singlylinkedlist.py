@@ -41,7 +41,7 @@ class SinglyLinkedList:
     def insert(self, position, data):
         '''Replace node at position with new node'''
 
-        if ((not self.head) or (position == 0)):
+        if (not self.head) or (position == 0):
             self.prepend(data)
         else:
             c = 0
@@ -51,10 +51,9 @@ class SinglyLinkedList:
                 c += 1
                 if c == (position - 1):
                     break
-            if prev_node.next_node == None:
+            if prev_node.next_node is None:
                 raise KeyError(position)
             prev_node.next_node = Node(data, prev_node.next_node)
-                
 
     def delete(self, position):
         '''Remove node at position'''
@@ -62,7 +61,7 @@ class SinglyLinkedList:
         if not self.head:
             raise KeyError(position)
 
-        if (position == 0):
+        if position == 0:
             if not self.head.next_node:
                 self.head = None
             else:
@@ -75,7 +74,7 @@ class SinglyLinkedList:
                 c += 1
                 if c == (position - 1):
                     break
-            if prev_node.next_node == None:
+            if prev_node.next_node is None:
                 raise KeyError(position)
             prev_node.next_node = prev_node.next_node.next_node
 
