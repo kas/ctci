@@ -69,11 +69,12 @@ class SinglyLinkedList:
         else:
             c = 0
             prev_node = self.head
-            while prev_node.next_node:
-                prev_node = prev_node.next_node
-                c += 1
-                if c == (position - 1):
-                    break
+            if c != (position - 1):
+                while prev_node.next_node:
+                    prev_node = prev_node.next_node
+                    c += 1
+                    if c == (position - 1):
+                        break
             if prev_node.next_node is None:
                 raise KeyError(position)
             prev_node.next_node = prev_node.next_node.next_node
@@ -90,23 +91,24 @@ class SinglyLinkedList:
                 iter_node = iter_node.next_node
                 print(iter_node)
 
-single = SinglyLinkedList()
-single.prepend('1st prepended')
-single.print()
-print('printed 1\n')
 
-single.prepend('2nd prepended')
-single.print()
-print('printed 2\n')
+# single = SinglyLinkedList()
+# single.prepend('1st prepended')
+# single.print()
+# print('printed 1\n')
 
-single.append('appended')
-single.print()
-print('printed 3\n')
+# single.prepend('2nd prepended')
+# single.print()
+# print('printed 2\n')
 
-single.insert(2, 'inserted at position 2')
-single.print()
-print('printed 4\n')
+# single.append('appended')
+# single.print()
+# print('printed 3\n')
 
-single.delete(0)
-single.print()
-print('printed 5\n')
+# single.insert(2, 'inserted at position 2')
+# single.print()
+# print('printed 4\n')
+
+# single.delete(0)
+# single.print()
+# print('printed 5\n')

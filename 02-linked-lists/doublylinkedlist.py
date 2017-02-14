@@ -13,7 +13,7 @@ class Node:
         self.next_node = next_node
 
     def __str__(self):
-        return self.data
+        return str(self.data)
 
 
 class DoublyLinkedList:
@@ -76,15 +76,17 @@ class DoublyLinkedList:
         else:
             c = 0
             prev_node = self.head
-            while prev_node.next_node:
-                prev_node = prev_node.next_node
-                c += 1
-                if c == (position - 1):
-                    break
+            if c != (position - 1):
+                while prev_node.next_node:
+                    prev_node = prev_node.next_node
+                    c += 1
+                    if c == (position - 1):
+                        break
             if prev_node.next_node is None:
                 raise KeyError(position)
             prev_node.next_node = prev_node.next_node.next_node
-            prev_node.next_node.prev_node = prev_node
+            if prev_node.next_node != None:
+                prev_node.next_node.prev_node = prev_node
 
     def print(self):
         '''Print linked list'''
@@ -99,29 +101,29 @@ class DoublyLinkedList:
                 print(iter_node)
 
 
-double = DoublyLinkedList()
-double.prepend('1st prepended')
-double.print()
-print('printed 1\n')
+# double = DoublyLinkedList()
+# double.prepend('1st prepended')
+# double.print()
+# print('printed 1\n')
 
-double.prepend('2nd prepended')
-double.print()
-print('printed 2\n')
+# double.prepend('2nd prepended')
+# double.print()
+# print('printed 2\n')
 
-double.append('appended')
-double.print()
-print('printed 3\n')
+# double.append('appended')
+# double.print()
+# print('printed 3\n')
 
-double.insert(2, 'inserted at position 2')
-double.print()
-print('printed 4\n')
+# double.insert(2, 'inserted at position 2')
+# double.print()
+# print('printed 4\n')
 
-double.delete(0)
-double.print()
-print('printed 5\n')
+# double.delete(0)
+# double.print()
+# print('printed 5\n')
 
-double.delete(0)
-double.delete(0)
-double.delete(0)
+# double.delete(0)
+# double.delete(0)
+# double.delete(0)
 
-double.print()
+# double.print()
