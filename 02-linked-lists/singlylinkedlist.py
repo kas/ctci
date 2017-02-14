@@ -1,7 +1,7 @@
 # implemented with help from https://codereview.stackexchange.com/questions/114435/python-linked-list?newreg=91a4427ce18048c7a67bbbc101f1ac89
 
 class Node:
-    '''Node'''
+    '''Node with data and next_node'''
 
     def __init__(self, data, next_node=None):
         '''Initialize the Node'''
@@ -45,42 +45,51 @@ class SinglyLinkedList:
             self.prepend(data)
         else:
             c = 0
-            iter_node = self.head
-            while iter_node.next_node:
-                iter_node = iter_node.next_node
+            prev_node = self.head
+            while prev_node.next_node:
+                prev_node = prev_node.next_node
                 c += 1
                 if c == (position - 1):
                     break
-            if iter_node.next_node == None:
+            if prev_node.next_node == None:
                 raise KeyError(position)
-            iter_node.next_node = Node(data, iter_node.next_node)
+            prev_node.next_node = Node(data, prev_node.next_node)
                 
 
     def delete(self, position):
         '''Remove node at position'''
 
+        if not self.head:
+            raise KeyError(position)
+
         if (position == 0):
-            self.head = self.head.next_node
+            if not self.head.next_node:
+                self.head = None
+            else:
+                self.head = self.head.next_node
         else:
             c = 0
-            iter_node = self.head
-            while iter_node.next_node:
-                iter_node = iter_node.next_node
+            prev_node = self.head
+            while prev_node.next_node:
+                prev_node = prev_node.next_node
                 c += 1
                 if c == (position - 1):
                     break
-            if iter_node.next_node == None:
+            if prev_node.next_node == None:
                 raise KeyError(position)
-            iter_node.next_node = iter_node.next_node.next_node
+            prev_node.next_node = prev_node.next_node.next_node
 
     def print(self):
         '''Print linked list'''
 
-        iter_node = self.head
-        print(iter_node)
-        while iter_node.next_node:
-            iter_node = iter_node.next_node
+        if not self.head:
+            print(None)
+        else:
+            iter_node = self.head
             print(iter_node)
+            while iter_node.next_node:
+                iter_node = iter_node.next_node
+                print(iter_node)
 
 single = SinglyLinkedList()
 single.prepend('1st prepended')
