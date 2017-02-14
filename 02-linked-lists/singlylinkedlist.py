@@ -10,7 +10,7 @@ class Node:
         self.next_node = next_node
 
     def __str__(self):
-        return self.data
+        return str(self.data)
 
 
 class SinglyLinkedList:
