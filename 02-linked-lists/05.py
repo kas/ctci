@@ -1,4 +1,4 @@
-# you have two numbers represented by a linked list where each node contains a singly digit. digits are stored in reverse order, such that the 1s digit is at the head of the list. write a function that adds the 2 numbers and returns the sum as a linked list
+# you have two numbers represented by a linked list where each node contains a single digit. digits are stored in reverse order, such that the 1s digit is at the head of the list. write a function that adds the 2 numbers and returns the sum as a linked list
 
 from doublylinkedlist import DoublyLinkedList
 
