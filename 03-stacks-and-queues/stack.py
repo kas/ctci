@@ -32,7 +32,7 @@ class Stack:
         self.top.next_node = t
 
     def peek(self):
-        '''Return top node'''
+        '''Return top value'''
         if not self.top:
             return None
         return self.top.data
