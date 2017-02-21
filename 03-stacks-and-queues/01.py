@@ -16,7 +16,7 @@ class ThreeStacks:
         if (stack_num == 1) and (self.one_len > 0):
             i = 0
             self.one_len -= 1
-        elif stack_num == 2 and (self.two_len > 0):
+        elif (stack_num == 2) and (self.two_len > 0):
             i = self.one_len
             self.two_len -= 1
         elif stack_num == 3:
