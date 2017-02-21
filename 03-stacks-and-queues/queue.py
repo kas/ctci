@@ -15,7 +15,7 @@ class Queue:
         return self.items.pop()
 
     def print(self):
-        '''Print linked list'''
+        '''Print queue'''
 
         print(self.items)
 

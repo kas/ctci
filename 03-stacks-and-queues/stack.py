@@ -38,7 +38,7 @@ class Stack:
         return self.top.data
 
     def print(self):
-        '''Print linked list'''
+        '''Print stack'''
 
         if not self.top:
             print(None)
