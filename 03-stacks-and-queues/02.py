@@ -31,6 +31,9 @@ class Stack:
     def minimum(self):
         '''Return minimum value in stack'''
 
+        if not self.items:
+            return None
+
         return self.min_items[len(self.min_items) - 1]
 
     def print(self):
