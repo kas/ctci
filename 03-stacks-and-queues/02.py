@@ -38,18 +38,18 @@ class Stack:
 
         print(self.items)
 
-stack = Stack()
-stack.push(3)
-stack.push(2)
-stack.push(1)
-stack.print()
+# stack = Stack()
+# stack.push(3)
+# stack.push(2)
+# stack.push(1)
+# stack.print()
 
-print('\nminimum:')
-print(stack.minimum())
+# print('\nminimum:')
+# print(stack.minimum())
 
-print('\npopping:')
-stack.pop()
-stack.print()
+# print('\npopping:')
+# stack.pop()
+# stack.print()
 
-print('\nminimum:')
-print(stack.minimum())
+# print('\nminimum:')
+# print(stack.minimum())
